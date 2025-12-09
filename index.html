@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Productivity Predictor</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <!-- ---------------- PAGE 1 ---------------- -->
+    <section id="page1" class="page active">
+        <div class="page1-inner">
+
+            <div class="title-block">
+                <div class="container">
+                    <h1 class="title">Welcome to Productivity Analyzer</h1>
+                    <p class="subtitle">Understand your habits. Improve your routine. Boost your performance.</p>
+                </div>
+            </div>
+
+            <div class="features-block">
+                <div class="container features-wrapper">
+                    <div class="features">
+                        <div class="feature-box">
+                            <h3>Track Behaviors</h3>
+                            <p>Monitor your daily routines with a detailed behavior chart.</p>
+                        </div>
+                        <div class="feature-box">
+                            <h3>Predict Productivity</h3>
+                            <p>Enter your daily inputs and get smart predictions.</p>
+                        </div>
+                        <div class="feature-box">
+                            <h3>Get Recommendations</h3>
+                            <p>Receive suggestions, alerts, daily plans & badges.</p>
+                        </div>
+                    </div>
+
+                    <div class="explore-wrap">
+                        <button class="next-btn" type="button" onclick="showPage(2)">Explore →</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ---------------- PAGE 2 ---------------- -->
+    <section id="page2" class="page">
+        <h1 class="section-title">Behaviour Classification Chart</h1>
+        <div class="grid-wrapper">
+            <div class="grid-container"></div>
+        </div>
+        <p class="chart-info">
+            Use this chart to rate your daily behaviours from 1–9.
+            <br>Your ratings will guide your productivity predictions.
+        </p>
+
+        <div class="nav-buttons">
+            <button class="prev-btn" type="button" onclick="showPage(1)">← Back</button>
+            <button class="next-btn" type="button" onclick="showPage(3)">Continue →</button>
+        </div>
+    </section>
+
+    <!-- ---------------- PAGE 3 ---------------- -->
+    <section id="page3" class="page">
+        <h1 class="section-title">Productivity Input & Prediction</h1>
+
+        <div class="split-container">
+            <div class="left-pane">
+                <div class="input-container">
+                    <form id="predictForm" class="two-column-form" onsubmit="return false;">
+                        <div class="input-row">
+                            <label>Screen Time</label>
+                            <input type="number" id="screen_time" required min="0" step="0.1">
+                        </div>
+                        <div class="input-row">
+                            <label>Study Hours</label>
+                            <input type="number" id="study_hours" required min="0" step="0.1">
+                        </div>
+                        <div class="input-row">
+                            <label>Sleep Hours</label>
+                            <input type="number" id="sleep_hours" required min="0" step="0.1">
+                        </div>
+                        <div class="input-row">
+                            <label>Social Media Hours</label>
+                            <input type="number" id="social_media_hours" required min="0" step="0.1">
+                        </div>
+                        <div class="input-row">
+                            <label>Physical Activity</label>
+                            <input type="number" id="physical_activity" required min="0" step="0.1">
+                        </div>
+                        <div class="input-row">
+                            <label>Breaks Taken</label>
+                            <input type="number" id="breaks" required min="0" step="1">
+                        </div>
+                        <div class="input-row">
+                            <label>Unlock Count</label>
+                            <input type="number" id="unlock_count" required min="0" step="1">
+                        </div>
+                        <div class="input-row">
+                            <label>Focus Hours</label>
+                            <input type="number" id="focus_hours" required min="0" step="0.1">
+                        </div>
+                        <div class="input-row">
+                            <label>Stress Index</label>
+                            <input type="number" id="stress_index" required min="0" step="0.1">
+                        </div>
+                        <div class="input-row">
+                            <label>Burnout Level</label>
+                            <input type="number" id="burnout_level" required min="0" step="0.1">
+                        </div>
+
+                        <button type="button" class="predict-btn" onclick="predictProductivity()">Predict Productivity</button>
+                    </form>
+                </div>
+
+                <div class="nav-buttons small">
+                    <button class="prev-btn" type="button" onclick="showPage(2)">← Back</button>
+                </div>
+            </div>
+
+            <div class="right-pane">
+                <div id="resultsContainer" class="results hidden"></div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
